@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.reckue'
-version = '1.0.0.SNAPSHOT'
+version = '1.0.0.RELESE'
 sourceCompatibility = '11'
 
 repositories {
@@ -14,14 +14,5 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-mail'
-
-    /* eureka server */
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:2.2.3.RELEASE'
-}
-
-def profile = "dev"
-
-bootRun {
-    args = ["--spring.profiles.active=" + profile]
 }
