@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: registry-service
+  name: registry-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: registry-service
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: registry-service
+    spec:
+      containers:
+      - image: reckue/registry-service:latest
+        name: registry-service
+        resources:
+          requests:
+            memory: 100Mi
+          limits:
+            memory: 256Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: registry-service
+  name: registry-service
+spec:
+  ports:
+  - name: 8761-8761
+    port: 8761
+    protocol: TCP
+    targetPort: 8761
+  selector:
+    app: registry-service
+  type: ClusterIP
