@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  registry-service:
+    container_name: registry-service
+    build: .
+    networks:
+      - net
+    ports:
+      - '8761:8761'
+    restart: unless-stopped
+
+networks:
+  net:
+    driver: bridge
