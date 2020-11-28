@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.reckue'
-version = '1.0.0.RELESE'
+version = '1.0.0'
 sourceCompatibility = '11'
 
 repositories {
