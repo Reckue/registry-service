@@ -2,6 +2,7 @@ server:
   port: 8761
 
 spring:
+  profiles: cloud
   application:
     name: registry-service
 
